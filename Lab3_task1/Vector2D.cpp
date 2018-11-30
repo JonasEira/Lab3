@@ -19,7 +19,7 @@ Vector2D::Vector2D(float x, float y)
 
 Vector2D::~Vector2D()
 {
-	delete vec;
+	delete[] vec;
 }
 
 float Vector2D::getX() {
