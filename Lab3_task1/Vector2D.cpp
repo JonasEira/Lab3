@@ -2,7 +2,7 @@
 #include "Vector2D.h"
 #include <iostream>
 
-using namespace std;
+
 Vector2D::Vector2D()
 {
 
@@ -10,36 +10,85 @@ Vector2D::Vector2D()
 
 Vector2D::Vector2D(float x, float y)
 {
-	cout << "Constructing" << endl;
-	this->setX(x);
-	this->setY(y);
+	std::cout << "Constructing" << std::endl;
+	this->v[0] = x;
+	this->v[1] = y;
 }
-
-
 
 Vector2D::~Vector2D()
 {
-	delete[] vec;
+	std::cout << "Deconstructing" << std::endl;
+	
 }
 
+
 float Vector2D::getX() {
-	return this->vec[0];
+	return this->v[0];
 }
 void Vector2D::setX(float newX)
 {
-	this->vec[0] = newX;
+	this->v[0] = newX;
 }
 float Vector2D::getY() {
-	return this->vec[1];
+	return this->v[1];
 }
 
 void Vector2D::setY(float newY)
 {
-	this->vec[1] = newY;
+	this->v[1] = newY;
 }
 
-ostream & operator<<(ostream & stream, Vector2D * vec)
+Vector2D Vector2D::operator+(Vector2D & v)
 {
-	return stream << "Vector2D=[" << vec->getX()
-		<< "," << vec->getY() << "]";
+
+	Vector2D vec = Vector2D(v.getX() + this->getX(), v.getY() + this->getY());
+	return vec;
 }
+
+
+Vector2D Vector2D::operator-(Vector2D & v)
+{
+	Vector2D vec = Vector2D(v.getX() - this->getX(), v.getY() - this->getY());
+	return vec;
+}
+
+Vector2D Vector2D::operator*(Vector2D & v)
+{
+	Vector2D vec = Vector2D(v.getX()*this->getY(), v.getY()*this->getX());
+	return vec;
+}
+
+float Vector2D::dot(Vector2D a, Vector2D b)
+{
+	return a.getX()*b.getX() + a.getY()*b.getY();
+}
+
+Vector2D Vector2D::operator=(Vector2D & vector)
+{
+	cout << "Assignment" << endl;
+	if (this != &vector) { 
+		copy(vector.v, vector.v + 2, v);
+	}
+	return *this;
+}
+
+bool & Vector2D::operator==(Vector2D & b)
+{
+	bool tmp = (this->getX() == b.getX()) && (this->getY() == b.getY());
+	return tmp;
+}
+
+bool & Vector2D::operator!=(Vector2D & b)
+{
+	bool tmp = (this->getX() != b.getX()) || (this->getY() != b.getY());
+	return tmp;
+}
+
+void Vector2D::printVector()
+{
+	cout << "Vector X=" << this->getX() << " Y=" << this->getY() << endl;
+}
+
+
+
+
