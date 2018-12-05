@@ -10,15 +10,12 @@ Vector2D::Vector2D()
 
 Vector2D::Vector2D(float x, float y)
 {
-	std::cout << "Constructing" << std::endl;
 	this->v[0] = x;
 	this->v[1] = y;
 }
 
 Vector2D::~Vector2D()
 {
-	std::cout << "Deconstructing" << std::endl;
-	
 }
 
 
