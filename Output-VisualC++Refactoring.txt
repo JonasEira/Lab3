@@ -1,0 +1,68 @@
+﻿
+Renamed 'Vector3D' to 'Matrix2D':
+---------------------------------
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Vector3D.cpp(5, 1)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Vector3D.cpp(5, 11)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Vector3D.cpp(10, 1)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Vector3D.cpp(10, 11)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Vector3D.cpp(15, 1)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Vector3D.cpp(15, 12)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Vector3D.h(3, 7)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Vector3D.h(10, 2)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Vector3D.h(11, 2)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Vector3D.h(13, 3)
+
+Renamed 'matrix' to 'data':
+---------------------------
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(12, 2)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(13, 2)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(14, 2)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(15, 2)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(20, 2)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(20, 19)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(21, 2)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(21, 19)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(22, 2)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(22, 19)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(23, 2)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(23, 19)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(32, 9)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(32, 24)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(32, 41)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(32, 56)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(32, 73)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(33, 9)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(33, 24)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(33, 41)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(33, 56)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(33, 73)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(34, 9)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(34, 24)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(34, 41)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(34, 56)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(34, 73)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(35, 9)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(35, 24)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(35, 41)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(35, 56)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(35, 73)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(41, 8)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(42, 8)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(43, 8)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(44, 8)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(49, 23)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(62, 27)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(62, 51)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(62, 75)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.cpp(62, 99)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Matrix2D.h(6, 8)
+
+Renamed 'makeMatrices' to 'runMatrices':
+----------------------------------------
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Lab3_task1.cpp(29, 6)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Lab3_task1.cpp(43, 2)
+
+Renamed 'makeVectors' to 'runVectors':
+--------------------------------------
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Lab3_task1.cpp(10, 6)
+C:\Users\jonas\source\repos\Lab3\Lab3_task1\Lab3_task1.cpp(42, 2)
