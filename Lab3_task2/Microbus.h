@@ -4,7 +4,7 @@ class Microbus :
 	public Vehicle
 {
 public:
-	Microbus();
+	Microbus(string model, float mileage, float price, int capacity);
 	~Microbus();
 };
 

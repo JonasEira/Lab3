@@ -1,8 +1,10 @@
 #pragma once
-class Sedan
+#include "Vehicle.h"
+class Sedan :
+	public Vehicle
 {
 public:
-	Sedan();
+	Sedan(string model, float mileage, float price, int capacity);
 	~Sedan();
 };
 

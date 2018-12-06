@@ -2,8 +2,12 @@
 #include "Combi.h"
 
 
-Combi::Combi()
+Combi::Combi(string model, float mileage, float price, int capacity)
 {
+	setModel(model);
+	setMileage(mileage);
+	setPrice(price);
+	setCapacity(capacity);
 }
 
 

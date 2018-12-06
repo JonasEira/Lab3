@@ -1,8 +1,11 @@
 #pragma once
-class Combi
+
+#include "Vehicle.h"
+class Combi :
+	public Vehicle
 {
 public:
-	Combi();
+	Combi(string model, float mileage, float price, int capacity);
 	~Combi();
 };
 

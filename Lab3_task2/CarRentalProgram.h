@@ -1,6 +1,11 @@
 #pragma once
 #include "Vehicle.h"
 #include <vector>
+#include "Microbus.h"
+#include "Sedan.h"
+#include "Coupe.h"
+#include "Combi.h"
+#include "Hatchback.h"
 class CarRentalProgram
 {
 private:

@@ -4,7 +4,7 @@ class Hatchback :
 	public Vehicle
 {
 public:
-	Hatchback();
+	Hatchback(string model, float mileage, float price, int capacity);
 	~Hatchback();
 };
 
