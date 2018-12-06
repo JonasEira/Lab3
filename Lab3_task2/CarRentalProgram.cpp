@@ -115,7 +115,7 @@ void CarRentalProgram::rentCar()
 	getline(cin, input);
 	int capacity = stoi(input);
 
-	cout << "Enter the vehicle's mileage: ";
+	cout << "Enter the vehicle's max mileage: ";
 	getline(cin, input);
 	float mileage = stof(input);
 
