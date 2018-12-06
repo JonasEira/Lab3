@@ -126,9 +126,9 @@ void CarRentalProgram::rentCar()
 	if (carDesc.isValid()) {
 		string car_name = carDesc.getModel();
 		vector<Vehicle> car_matches;
-		
+
 		std::vector<Vehicle>::iterator it = vehicles.begin();
-		std::vector<Vehicle>::iterator it2= vehicles.begin();
+		std::vector<Vehicle>::iterator it2 = vehicles.begin();
 
 		while (it != vehicles.end()) {
 			Vehicle v = *it;
@@ -137,13 +137,16 @@ void CarRentalProgram::rentCar()
 			}
 			it++;
 		}
-		cout << "Matching vehicles found: " << car_matches.capacity() << endl;
+		cout << "Matching vehicles found: " << car_matches.size() << endl;
+		if (car_matches.size() == 0) {
+			return;
+		}
 		sortMatches(car_matches);
-		int n = 0;
+		int n = 1;
 		it = car_matches.begin();
 		while (it != car_matches.end()) {
 			Vehicle v = *it;
-			cout << n << ": ";
+			cout << "\nMatch #" << n << ":\n";
 			v.printOut();
 			it++;
 			n++;
@@ -152,19 +155,30 @@ void CarRentalProgram::rentCar()
 		getline(cin, input);
 		vector<string> tokens = split(input, '-');
 		vector<string>::iterator it3;
-		if (tokens.capacity() == 0) {
+		if (tokens.size() != 2) {
 			tokens = split(input, ' ');
-			if (tokens.capacity == 0) {
+			if (tokens.size() == 0) {
 				cout << "No Vehicle selected" << endl;
 				return;
 			}
 			else {
 				// We have singular vehicles chosen GET EM! :)
-				n = 0;
 				it3 = tokens.begin();
+				int ind;
+				cout << "Renting car: ";
 				while (it3 != tokens.end()) {
+					ind = stoi(*it3);
+					cout << ind << " ";
+					if ((ind-1) < car_matches.size() && ind >= 0) {
+						Vehicle v = car_matches.at(ind - 1);
+						moveToRented(v);
+					}
+					else {
+						cout << "Can't rent this cause of reasons" << endl;
+					}
 					it3++;
 				}
+				cout << endl;
 
 			}
 		}
@@ -174,11 +188,13 @@ void CarRentalProgram::rentCar()
 
 			int start = stoi(*it3++);
 			int stop = stoi(*it3++);
+			cout << "Renting car: " << start << "-" << stop << endl;
 			if (stop > start) {
 				it2 = car_matches.begin();
 				n = 1;
 				while (it2 != car_matches.end()) {
 					if (n >= start && n <= stop) {
+						cout << "Moving to rented " << n << endl;
 						moveToRented(*it2);
 					}
 					n++;
@@ -186,7 +202,7 @@ void CarRentalProgram::rentCar()
 				}
 			}
 			else {
-				cout << "Invalid selection" << endl;
+				cout << "Invalid range selection - Stop greater than Start value" << endl;
 			}
 		}
 
@@ -198,8 +214,11 @@ void CarRentalProgram::moveToRented(Vehicle &v)
 	vector<Vehicle>::iterator it = vehicles.begin();
 	while (it != vehicles.end()) {
 		if (*it == v) {
-
+			rented.push_back(*it);
+			vehicles.erase(it);
+			break;
 		}
+		it++;
 	}
 }
 

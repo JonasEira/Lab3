@@ -18,7 +18,7 @@ public:
 	void runTask(bool start);
 	void registerCar();
 	void rentCar();
-	void moveToRented(Vehicle v);
+	void moveToRented(Vehicle &v);
 	void sortMatches(vector<Vehicle> &list);
 	vector<string> split(string strToSplit, char delimeter);
 };
