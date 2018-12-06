@@ -17,5 +17,6 @@ public:
 	void runTask(bool start);
 	void registerCar();
 	void rentCar();
+	void sortMatches(vector<Vehicle> list);
 };
 

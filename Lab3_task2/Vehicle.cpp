@@ -82,3 +82,9 @@ std::ostream & operator<<(ostream & os, const Vehicle & v)
 	
 	return os;
 }
+
+bool & operator<(const Vehicle& rhs, const Vehicle& lhs)
+{
+	bool tmp = rhs.price < lhs.price;
+	return tmp;
+}

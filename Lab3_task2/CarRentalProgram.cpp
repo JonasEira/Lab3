@@ -2,6 +2,7 @@
 #include "CarRentalProgram.h"
 #include <iostream>
 #include <string>
+#include <algorithm>
 using namespace std;
 CarRentalProgram::CarRentalProgram()
 {
@@ -132,12 +133,22 @@ void CarRentalProgram::rentCar()
 				car_matches.push_back(v);
 				v.printOut();
 			}
-			++it;
+			it++;
 		}
 		cout << "Matching vehicles found: " << car_matches.capacity() << endl;
-		sortMatches(&car_matches);
+		sortMatches(car_matches);
 	}
 }
-void sortMatches(vector<Vehicle> *list){
+void CarRentalProgram::sortMatches(vector<Vehicle> list){
+	sort(list.begin(), list.end(), []( Vehicle& lhs, Vehicle& rhs)
+	{
+		return lhs.getPrice() < rhs.getPrice();
+	});
 	
+	std::vector<Vehicle>::iterator it = list.begin();
+	while (it != list.end()) {
+		Vehicle v = *it;
+		v.printOut();
+		it++;
+	}
 }

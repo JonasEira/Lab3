@@ -24,6 +24,7 @@ public:
 	bool matches(int capacity, float mileage, string car_i);
 	void printOut();
 	friend ostream& operator<<(ostream& os, const Vehicle &v);
+	friend bool& operator<(const Vehicle& rhs, const Vehicle &lhs);
 };
 namespace CarTypes {
 	enum Car_T
