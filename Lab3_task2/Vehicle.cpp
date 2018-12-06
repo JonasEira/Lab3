@@ -88,3 +88,12 @@ bool & operator<(const Vehicle& rhs, const Vehicle& lhs)
 	bool tmp = rhs.price < lhs.price;
 	return tmp;
 }
+
+bool & operator==(const Vehicle & rhs, const Vehicle & lhs)
+{
+	bool tmp = (rhs.capacity == lhs.capacity
+		&& rhs.mileage == lhs.mileage
+		&& rhs.model == lhs.model
+		&&rhs.price == lhs.price);
+	return tmp;
+}

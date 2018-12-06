@@ -25,6 +25,7 @@ public:
 	void printOut();
 	friend ostream& operator<<(ostream& os, const Vehicle &v);
 	friend bool& operator<(const Vehicle& rhs, const Vehicle &lhs);
+	friend bool& operator==(const Vehicle& rhs, const Vehicle &lhs);
 };
 namespace CarTypes {
 	enum Car_T

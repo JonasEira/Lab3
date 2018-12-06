@@ -11,12 +11,15 @@ class CarRentalProgram
 private:
 	bool running = true;
 	vector<Vehicle> vehicles;
+	vector<Vehicle> rented;
 public:
 	CarRentalProgram();
 	~CarRentalProgram();
 	void runTask(bool start);
 	void registerCar();
 	void rentCar();
-	void sortMatches(vector<Vehicle> list);
+	void moveToRented(Vehicle v);
+	void sortMatches(vector<Vehicle> &list);
+	vector<string> split(string strToSplit, char delimeter);
 };
 

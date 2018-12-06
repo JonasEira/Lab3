@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <sstream>
 using namespace std;
 CarRentalProgram::CarRentalProgram()
 {
@@ -125,30 +126,100 @@ void CarRentalProgram::rentCar()
 	if (carDesc.isValid()) {
 		string car_name = carDesc.getModel();
 		vector<Vehicle> car_matches;
+		
 		std::vector<Vehicle>::iterator it = vehicles.begin();
+		std::vector<Vehicle>::iterator it2= vehicles.begin();
 
 		while (it != vehicles.end()) {
 			Vehicle v = *it;
 			if (v.matches(capacity, mileage, car_name)) {
 				car_matches.push_back(v);
-				v.printOut();
 			}
 			it++;
 		}
 		cout << "Matching vehicles found: " << car_matches.capacity() << endl;
 		sortMatches(car_matches);
+		int n = 0;
+		it = car_matches.begin();
+		while (it != car_matches.end()) {
+			Vehicle v = *it;
+			cout << n << ": ";
+			v.printOut();
+			it++;
+			n++;
+		}
+		cout << "Choose rental (\"1 3 4\" or \"1-3\" or \"2-6\", etc): " << endl;
+		getline(cin, input);
+		vector<string> tokens = split(input, '-');
+		vector<string>::iterator it3;
+		if (tokens.capacity() == 0) {
+			tokens = split(input, ' ');
+			if (tokens.capacity == 0) {
+				cout << "No Vehicle selected" << endl;
+				return;
+			}
+			else {
+				// We have singular vehicles chosen GET EM! :)
+				n = 0;
+				it3 = tokens.begin();
+				while (it3 != tokens.end()) {
+					it3++;
+				}
+
+			}
+		}
+		else {
+			// We have a range.. get start and stop
+			it3 = tokens.begin();
+
+			int start = stoi(*it3++);
+			int stop = stoi(*it3++);
+			if (stop > start) {
+				it2 = car_matches.begin();
+				n = 1;
+				while (it2 != car_matches.end()) {
+					if (n >= start && n <= stop) {
+						moveToRented(*it2);
+					}
+					n++;
+					it2++;
+				}
+			}
+			else {
+				cout << "Invalid selection" << endl;
+			}
+		}
+
 	}
 }
-void CarRentalProgram::sortMatches(vector<Vehicle> list){
-	sort(list.begin(), list.end(), []( Vehicle& lhs, Vehicle& rhs)
+
+void CarRentalProgram::moveToRented(Vehicle &v)
+{
+	vector<Vehicle>::iterator it = vehicles.begin();
+	while (it != vehicles.end()) {
+		if (*it == v) {
+
+		}
+	}
+}
+
+vector<string> CarRentalProgram::split(string strToSplit, char delimeter)
+{
+	std::stringstream ss(strToSplit);
+	std::string item;
+	std::vector<std::string> splittedStrings;
+	while (std::getline(ss, item, delimeter))
+	{
+		splittedStrings.push_back(item);
+	}
+	return splittedStrings;
+}
+
+void CarRentalProgram::sortMatches(vector<Vehicle> &list) {
+	sort(list.begin(), list.end(), [](Vehicle& lhs, Vehicle& rhs)
 	{
 		return lhs.getPrice() < rhs.getPrice();
 	});
-	
-	std::vector<Vehicle>::iterator it = list.begin();
-	while (it != list.end()) {
-		Vehicle v = *it;
-		v.printOut();
-		it++;
-	}
+
+
 }
