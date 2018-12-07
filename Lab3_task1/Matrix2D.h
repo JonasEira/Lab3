@@ -15,10 +15,14 @@ public:
 	void printMatrix();
 	
 	void setData(float x1, float y1, float x2, float y2);
+
+	void setData(float input, int x, int y);
 	
 	Matrix2D transform(Vector2D &v, Matrix2D &m);
 
 	Matrix2D rotate(float degrees);
+
+	Matrix2D & transpose();
 
 	float* getData();
 
@@ -26,6 +30,5 @@ public:
 
 	~Matrix2D();
 };
-void transpose(Matrix2D &m);
 Matrix2D unity();
 

@@ -44,6 +44,10 @@ void Matrix2D::setData(float x1, float y1, float x2, float y2)
 	this->data[1][1] = y2;
 }
 
+void Matrix2D::setData(float input, int x, int y) {
+	this->data[x][y] = input;
+}
+
 Matrix2D Matrix2D::transform(Vector2D & v, Matrix2D & m)
 {
 	Matrix2D vect;
@@ -51,30 +55,37 @@ Matrix2D Matrix2D::transform(Vector2D & v, Matrix2D & m)
 	return vect*m;
 }
 
-Matrix2D Matrix2D::rotate(float degrees)
+Matrix2D Matrix2D::rotate(float radians)
 {
-	Matrix2D rot = Matrix2D(cos(degrees), sin(degrees), -sin(degrees), cos(degrees));
-	return this->operator*(rot);
+	Matrix2D rot = Matrix2D(cos(radians)*data[0][0], 
+							-sin(radians)*data[0][1],
+							sin(radians)*data[1][0], 
+							cos(radians)*data[1][1]);
+	
+	return rot;
 }
 
 
 float* Matrix2D::getData()
 {
-	float* data = *this->data;
+	float* data = &this->data[0][0];
 	return data;
 }
 
-void transpose(Matrix2D & m)
+Matrix2D & Matrix2D::transpose()
 {
-	Matrix2D tmp = Matrix2D(m);
-	Matrix2D trans_m;
-	trans_m.setData(1.0, -1.0, -1.0, 1.0);
-	m = tmp * trans_m;
+	Matrix2D m;
+	for (int n = 0; n < 2; n++) {
+		for (int k = 0; k < 2; k++) {
+			m.setData(data[k][n], n, k);
+		}
+	}
+	return m;
 }
 Matrix2D unity()
 {
 	Matrix2D m;
-	m.setData(1.0,0.0, 0.0, 1.0);
+	m.setData(1.0, 0.0, 0.0, 1.0);
 	return m;
 }
 
